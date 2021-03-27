@@ -15,7 +15,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=${MONGODB_ROOT_PASSWORD}
   # armory-api is the backend service that serves characters over http.
   armory-api:
-    image: ghcr.io/nokka/d2-armory-api:latest
+    image: ghcr.io/DoctorWoot420/d209-armory-api:latest
     volumes:
       - ./d2s/:/data/d2s
     ports:
@@ -32,7 +32,7 @@ services:
     entrypoint: sh -c "/app/armory"
   # armory-gui is the frontend used for the armory served by NGINX.
   armory-gui:
-    image: ghcr.io/nokka/d2-armory-gui:latest
+    image: ghcr.io/DoctorWoot420/d209-armory-gui:latest
     ports:
       - "9000:80"
     depends_on:
